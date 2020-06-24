@@ -10,7 +10,7 @@ var snake;
     snake = new Snake();
     fruit = new Fruit();
     fruit.location();
-    console.log(fruit);
+    //console.log(fruit);
 
     window.setInterval(() => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -21,6 +21,9 @@ var snake;
         if (snake.eat(fruit)) {
             fruit.location();
         }
+
+        snake.collision();
+        document.querySelector('.score').innerText = snake.totalEaten;
     }, 250);
 }());
 

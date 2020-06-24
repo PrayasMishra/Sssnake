@@ -76,4 +76,14 @@ function Snake(){
 
         return false;
     }
+
+    this.collision = function(){
+        for(var i = 0; i < this.tail.length; i++){
+            if (this.x === this.tail[i].x && this.y === this.tail[i].y) {
+                //console.log("collision!!")
+                this.totalEaten = 0;
+                this.tail = [];
+            }
+        }
+    }
 }
